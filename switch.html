@@ -1,0 +1,80 @@
+<script>
+    // switch -> branching
+
+    // formula - similat cu cautarea unui oficiu x 
+    // (ceva similitudini cu if else, dar nu orice 
+    //if else poate fi scris ca switch)
+
+    // switch foloseste comparatia cu "==="
+
+    /*
+
+    switch (expression) {  
+        case value-1:
+            code_1
+        break
+
+        case value-2:
+            code_2
+        break
+        // .......
+        case value-n:
+            code_n
+        break
+
+        default:
+            code_default
+        break
+    } */
+
+    //let day = parseInt(prompt("Day of the week?")) // 1...7
+    const calendar1 = "UK"
+    const calendar2 = "US"
+
+    let calendar = prompt("What Calendar?")
+
+    if (calendar == calendar1 ) {
+        let day = parseInt(prompt("Day of the week?")) // 1...7
+        switch (day) {
+        case 1: document.write("Mo"); break
+        case 2: document.write("Tu"); break
+        case 3: document.write("Wd"); break
+        case 4: document.write("Th"); break
+        case 5: 
+            let times = 5
+            while(times > 0) {
+                document.write("Yhuu! :D <br> ")
+                times --
+            }
+            document.write("<br> Fr"); break
+        case 6: document.write("Sa"); break
+        case 7: document.write("Su"); break
+
+        default: document.write("Are you sure? Something wrong!") 
+        break
+        }
+    } else if(calendar == calendar2) {
+        let day = parseInt(prompt("Day of the week?")) // 1...7
+        switch (day) {
+        case 2: document.write("Mo"); break
+        case 3: document.write("Tu"); break
+        case 4: document.write("Wd"); break
+        case 5: document.write("Th"); break
+        case 6: 
+            let times = 5
+            while(times > 0) {
+                document.write("Yhuu! :D <br> ")
+                times --
+            }
+            document.write("<br> Fr"); break
+        case 7: document.write("Sa"); break
+        case 1: document.write("Su"); break
+
+        default: document.write("Are you sure? Something wrong!") 
+        break
+        }
+    }
+
+    
+
+</script>
