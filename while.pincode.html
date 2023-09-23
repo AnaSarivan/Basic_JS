@@ -1,0 +1,42 @@
+<script>
+  const PIN = "1234";
+
+  let pin = "";
+  let tries = 0;
+  let balance = 1000000.0;
+  const MAX_DRAW = 50000.0;
+
+  while (true) {
+    pin = prompt("ENTER PIN: ");
+    tries++;
+    if (pin == PIN) {
+      alert(`ACCESS GRANTED! \n\n
+      YOUR balance: ${balance}MDL
+      `);
+      let money = +prompt("WITHDRAW: ?");
+      //////////////// sa ma gandesc la o solutie
+      if (money > balance) {
+        alert(
+          `You have just ${balance}MDL. Maxim amount you can draw is ${MAX_DRAW}MDL. For other amounts of money please contact your bank!`
+        );
+        break;
+      }
+      
+      if (money > MAX_DRAW) {
+        alert(` Maxim amount you can draw is ${MAX_DRAW}MDL. Please, try one more time!`);
+      } else {
+        balance -= money;
+        alert(`SUCCESS! \n\n
+            YOUR balance: ${balance}MDL`);
+        break;
+      }
+      //////////////////
+    } else {
+      alert("WRONG PIN!");
+      if (tries == 3) {
+        alert("CARD BLOKED!");
+        break; // force stop
+      }
+    }
+  }
+</script>
