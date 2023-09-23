@@ -1,0 +1,25 @@
+<script>
+    
+    let childWidth   = 100
+    let childPadding = 10
+    let childBorder  = 1
+    let childMargin  = 20
+
+    let parentWidth  = 110
+
+    let childSize    = childWidth + (childPadding + childBorder + childMargin) * 2
+    let overflow     = childSize > parentWidth // Boolean
+    let howMuchOverflow = childSize - parentWidth
+
+    alert( 'Horizontal child size ' + childSize + ' px.')
+    alert( "Child overflow? " + overflow)
+    alert( "Child overflow his parent with " + howMuchOverflow + " px.")
+
+
+
+
+
+
+
+
+</script>
