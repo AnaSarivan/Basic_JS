@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ATM | JS</title>
+    <style>
+      /* DONE   ---  HW2: make all buttons of the same size */
+      button {
+        display: block;
+        margin-bottom: 0px;
+        width: 200px;
+        height: 30px;
+        background-color: rgb(205, 195, 50);
+        border-radius: 5px;
+        border: none;
+        font-weight: bold;
+        font-family: Arial, Helvetica, sans-serif;
+        letter-spacing: 1px;
+      }
+    </style>
+  </head>
+  <body>
+    <!--
+        the order of execution of the code:
+
+        1. creat button
+        2. process script element (execute JS)
+        3. ? execute JS binded to the click
+   
+    <button onclick="
+        alert('BUTTON CLICKED' + n)
+        ">
+
+        CLICK TO EXECUTE JS
+    </button>
+
+
+    <script>
+        alert("PAGE LOADED")
+        let n = 1
+
+    </script>
+ -->
+    <h1>JS ATM & Co</h1>
+    <h2>Welcome!</h2>
+    <p><i>Choose action:</i></p>
+    <button
+      onclick="
+        let inputID  = +prompt('Enter ID')
+        if (inputID === clientID) {
+            let inputPin = +prompt('Enter PIN')
+            if (inputPin === clientPinCode) {
+                alert(`Balance: ${clientMoneyAmount} ${clientMoneyCurrency}`)
+            } else {
+                alert('Wrong Pin Code!')
+            }
+        } else {
+            alert('Wrong client ID!')
+        }        
+
+    "
+    >
+      CHECK FOUNDS
+    </button>
+    <br />
+
+    <button
+      onclick="
+        //DONE --- HW1 ; add id & pin verification here
+        let checkID  = +prompt('Enter ID')
+        if (checkID === clientID) {
+            let checkPin = +prompt('Enter PIN')
+            if (checkPin === clientPinCode) {
+                let inputAmount   = +prompt('Enter AMOUNT')
+                if (inputAmount >= 1) {
+                    let inputCurrency = prompt('Enter Currency')
+                    if (inputCurrency === clientMoneyCurrency) {
+                        clientMoneyAmount += inputAmount
+                        alert(`Success! Current amount ${clientMoneyAmount} ${clientMoneyCurrency}!`) //DONE --- HW3: Succes message 
+                    } else {
+                       alert(`Cannot process ${inputCurrency}`)
+                    }   
+                } else {
+                    alert('Please enter a valid number. Try again!')
+                }    
+            } else {
+                alert('Wrong Pin Code!')
+            }
+        } else {
+            alert('Wrong client ID!')
+        }    
+    "
+    >
+      TRANSFER FOUNDS
+    </button>
+
+    <br />
+    <button
+      onclick="
+        // HW4: write the withdrawal logic
+        //      check id & pin 
+        //      CHECK if suficient FOUNDS 
+        //      check currency 
+        //      check limit 5000 
+        //      update the founds 
+        //      display success message 
+
+        let ID  = +prompt('Enter ID')
+        if (ID === clientID) {
+            let pinCheck = +prompt('Enter PIN')
+            if (pinCheck === clientPinCode) {
+                alert(`Balance: ${clientMoneyAmount} ${clientMoneyCurrency}!`)
+                let inputAmount   = +prompt('Enter AMOUNT')
+                if (inputAmount >= 1 && clientMoneyAmount > inputAmount) {
+                    let inputCurrency = prompt('Enter Currency')
+                    if (inputCurrency === clientMoneyCurrency) {
+                        clientMoneyAmount -= inputAmount
+                        alert(`Success! Current amount ${clientMoneyAmount} ${clientMoneyCurrency}!`) 
+                    } else {
+                       alert(`Cannot process ${inputCurrency}`)
+                    }   
+                } else {
+                    alert('Please enter a valid number or you do not have enough money. Check again!')
+                }   
+            } else {
+                alert('Wrong Pin Code!')
+            }
+        } else {
+            alert('Wrong client ID!')
+        }    
+    "
+    >
+      WITHDRAW FOUNDS
+    </button>
+
+    <script>
+      // client account data
+
+      let clientMoneyAmount = 10000;
+      let clientMoneyCurrency = "EUR";
+      let clientID = 12345678;
+      let clientPinCode = 1234;
+    </script>
+  </body>
+</html>
