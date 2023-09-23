@@ -1,0 +1,25 @@
+<script>
+    // global data
+    let currentYear = 2023
+
+    // user profile 
+    let userName     = "John Doe"
+    let userAvatar   = "avatar.png"
+    let userYearB    = 1977
+    let userEmail    = "jd@example.com"
+    let userOnline   = true
+    let userAge      =  currentYear - userYearB
+
+    //--------------
+    let onlineColor = userOnline == true ? 'green' : 'gray'
+
+    let outOnline   = "<span style='color: " + onlineColor + "'>●</span>"
+    
+    let output = "<h2>" + userName + "<small> (" + userAge + "y.o.)</small></h2>" + 
+                 "<img src='" + userAvatar + "' style='width: 80px;' />" + outOnline + 
+                 "<br><br><a href='mailto:"+ userEmail +"'> " + userEmail + "</a>"
+
+    document.write(output)
+   
+
+</script>
