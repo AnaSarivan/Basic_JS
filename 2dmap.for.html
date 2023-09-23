@@ -1,0 +1,27 @@
+<!-- 
+    2d mao for loop example 
+-->
+<body style="font-family: monospace; line-height: 14px">
+  <script>
+    let rx = 7
+    let ry = 5
+    let sx = 1
+    let sy = 10
+
+    for (let y = 1; y <= 10; y++) {
+// for care deseneaza punctele...........
+      for (let x = 1; x <= 10; x++) {
+
+        if (x == rx && y == ry) {
+            document.write(`r `);
+        } else if (x == sx && y == sy) {
+            document.write(`s `);
+        } else {
+            document.write(`. `);
+        }        
+      }
+// for care deseneaza punctele............
+      document.write(`<br>`);
+    }
+  </script>
+</body>
