@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS | GALLERY</title>
+    <style>
+      body {
+        background-color: rgb(120, 120, 112);
+      }
+
+      #gallery {
+        width: 530px;
+        /* border: 1px solid white; */
+        margin: 50px auto;
+        text-align: center;
+      }
+      #gallery .thumb {
+        width: 100px;
+        border: 1px solid transparent;
+      }
+      #gallery .thumb.active {
+        border-color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="gallery">
+      <img src="image/1.jpg" id="mainImage" />
+      <hr />
+      <img id="thumb1" onclick="selectImage(1)" src="image/1.jpg" class="thumb active" />
+      <img id="thumb2" onclick="selectImage(2)" src="image/2.jpg" class="thumb" />
+      <img id="thumb3" onclick="selectImage(3)" src="image/3.jpg" class="thumb" />
+      <img id="thumb4" onclick="selectImage(4)" src="image/4.jpg" class="thumb" />
+      <img id="thumb5" onclick="selectImage(5)" src="image/5.jpg" class="thumb" />
+    </div>
+
+    <script>
+      function selectImage(n) {
+        //change main image
+        mainImage.src = `image/${n}.jpg`;
+
+        for (let i = 1; i <= 5; i++) {
+          if (i == n) {
+            window[`thumb${i}`].className = 'thumb active';
+          } else {
+            window[`thumb${i}`].className = 'thumb';
+          }
+        }
+      }
+    </script>
+  </body>
+</html>
