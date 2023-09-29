@@ -10,7 +10,7 @@
       }
 
       #gallery {
-        width: 530px;
+        width: 580px;
         /* border: 1px solid white; */
         margin: 50px auto;
         text-align: center;
@@ -26,16 +26,40 @@
   </head>
   <body>
     <div id="gallery">
+
       <img src="image/1.jpg" id="mainImage" />
       <hr />
+      <button onclick="next()">+</button>
       <img id="thumb1" onclick="selectImage(1)" src="image/1.jpg" class="thumb active" />
       <img id="thumb2" onclick="selectImage(2)" src="image/2.jpg" class="thumb" />
       <img id="thumb3" onclick="selectImage(3)" src="image/3.jpg" class="thumb" />
       <img id="thumb4" onclick="selectImage(4)" src="image/4.jpg" class="thumb" />
       <img id="thumb5" onclick="selectImage(5)" src="image/5.jpg" class="thumb" />
+      <button onclick="prev()">-</button>
     </div>
 
+
     <script>
+
+      let setImg = 0
+      let setPrev = 6
+
+      function next () {
+        setImg++        
+        selectImage(setImg)
+        if (setImg == 5) {
+          setImg = 0
+        }
+      }
+      
+      function prev () {
+        setPrev--       
+        selectImage(setPrev)
+        if (setPrev == 1) {
+          setPrev = 6
+        }
+      }
+
       function selectImage(n) {
         //change main image
         mainImage.src = `image/${n}.jpg`;
