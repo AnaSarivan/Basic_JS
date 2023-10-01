@@ -1,0 +1,27 @@
+
+
+<script>
+
+const sayHi = () => {
+    console.log('Hi!')
+}
+
+// DIRECT function call
+// sayHi()
+
+//INDIRECT function call / CALLBACK
+//setTimeout( sayHi, 3000)
+// document.body.onclick = sayHi
+
+const repeat3times = (cb) => {
+    for (let i=0; i<3; i++) {
+        cb()
+    }
+}
+
+repeat3times(sayHi)
+
+
+
+
+</script>
